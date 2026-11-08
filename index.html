@@ -1,0 +1,248 @@
+<!doctype html>
+<!-- v1.2.5 | 8 nov 2026 -->
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cybercrimeinfo Quiz - Week 45-2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap');
+:root{--bg:#0a0e17;--surface:#111827;--hover:#1a2234;--border:#1e293b;--accent:#f59e0b;--good:#10b981;--bad:#ef4444;--text:#e2e8f0;--dim:#94a3b8;--muted:#64748b}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:Outfit,sans-serif;line-height:1.6;min-height:100vh}.container{margin:auto;max-width:800px;padding:2rem 1.5rem}header{text-align:center;border-bottom:1px solid var(--border);margin-bottom:2rem;padding-bottom:2rem}.badge{display:inline-block;background:#f59e0b18;border:1px solid #f59e0b55;border-radius:99px;color:var(--accent);font:700 .75rem 'JetBrains Mono';letter-spacing:.05em;margin-bottom:1rem;padding:.35rem 1rem;text-transform:uppercase}h1{color:var(--accent);font-size:2rem}header p{color:var(--dim);margin-top:.45rem}.progress{background:var(--border);border-radius:3px;height:5px;margin-bottom:1.25rem;overflow:hidden}.progress span{background:var(--accent);display:block;height:100%;transition:width .3s;width:0}.score{text-align:center;color:var(--muted);font:.85rem 'JetBrains Mono';margin-bottom:1.5rem}.score b{color:var(--accent)}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:1.25rem;padding:1.7rem}.card.good{border-color:var(--good)}.card.bad{border-color:var(--bad)}.number{color:var(--muted);font:.7rem 'JetBrains Mono';letter-spacing:.1em;text-transform:uppercase}.question{font-size:1.08rem;font-weight:600;margin:.65rem 0 1.2rem}.options{display:grid;gap:.6rem}.option{width:100%;text-align:left;font:inherit;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;display:flex;gap:.8rem;padding:.8rem 1rem}.option:hover:not(.disabled){background:var(--hover);border-color:var(--accent)}.letter{flex-shrink:0;align-items:center;border:1px solid var(--border);border-radius:4px;color:var(--text);display:flex;font:700 .75rem 'JetBrains Mono';height:24px;justify-content:center;width:24px}.option:focus-visible,.restart:focus-visible{outline:3px solid #7dd3fc;outline-offset:3px}.option.disabled{cursor:default;opacity:.62}.option.correct,.option.wrong{opacity:1}.option.correct{background:#10b98116;border-color:var(--good)}.option.correct .letter{background:var(--good);color:var(--bg)}.option.wrong{background:#ef444416;border-color:var(--bad)}.option.wrong .letter{background:var(--bad);color:var(--bg)}.feedback{border-radius:8px;display:none;font-size:.9rem;margin-top:1rem;padding:.8rem 1rem}.feedback.show{display:block}.feedback.good{background:#10b98116;color:var(--good)}.feedback.bad{background:#ef444416;color:var(--bad)}.results{background:var(--surface);border:1px solid var(--accent);border-radius:12px;display:none;padding:2.5rem 2rem;text-align:center}.results.show{display:block}.final{color:var(--accent);font:700 3rem 'JetBrains Mono';margin:1rem}.restart{background:var(--accent);border:0;border-radius:8px;color:var(--bg);cursor:pointer;font:600 1rem Outfit;padding:.8rem 1.8rem;margin-top:1.25rem}footer{border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;margin-top:2rem;padding:2rem 0;text-align:center}footer a{color:var(--accent)}@media(max-width:600px){.container{padding:1rem}.card{padding:1.2rem}h1{font-size:1.55rem}}
+</style>
+</head>
+<body><main class="container">
+<header><div class="badge">Week 45 &bull; 2026</div><h1>Cybercrime Quiz</h1><p>Weekoverzicht van 31 oktober tot en met 6 november 2026</p><p>Aanvallen op koelsystemen van supermarkten, een startprogramma van een game waarmee een programma bij spelers werd geïnstalleerd en de miljardenroof bij Binance. Wat weet jij nog van het cybercrimenieuws van deze week? Test je kennis in twintig vragen, met uitleg na elk antwoord.</p></header>
+<div class="progress" role="progressbar" aria-label="Beantwoorde vragen" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"><span id="progress"></span></div><div class="score">Score: <b id="score">0</b> / <b id="answered">0</b></div><section id="quiz"></section>
+<section class="results" id="results"><h2>Quiz voltooid!</h2><div class="final" id="final"></div><p id="message"></p><button class="restart" onclick="restartQuiz()">Opnieuw spelen</button></section>
+</main><footer>Cybercrimeinfo Quiz WK45-2026 &bull; <a href="https://www.ccinfo.nl">ccinfo.nl</a> &bull; 8 november 2026</footer>
+<script>
+const questions=[
+  {
+    "q": "De FBI schrijft de diefstal van meer dan 6 miljard dollar aan cryptovaluta bij Binance toe aan TraderTraitor. Welk land steunt die eenheid volgens de FBI?",
+    "options": [
+      "Rusland",
+      "Noord-Korea",
+      "Iran",
+      "China"
+    ],
+    "correct": 1,
+    "explanation": "De FBI maakte dat op zaterdag 31 oktober bekend. Eerder schreven blockchainanalisten de aanval al toe aan Noord-Korea, dit was de eerste publieke bevestiging door Amerikaanse federale onderzoekers. Binance zette volgens eigen opgave miljarden dollars opzij om de verliezen te dekken."
+  },
+  {
+    "q": "Ahold Delhaize verwacht dat het cyberincident van oktober de omzet in het vierde kwartaal verlaagt. Met hoeveel?",
+    "options": [
+      "200 miljoen tot 250 miljoen euro",
+      "2 miljoen tot 5 miljoen euro",
+      "20 miljoen tot 25 miljoen euro",
+      "Meer dan 1 miljard euro"
+    ],
+    "correct": 0,
+    "explanation": "Ahold Delhaize, het moederbedrijf van onder meer Albert Heijn, maakte dat op 4 november bekend bij de cijfers over het derde kwartaal. Het bedrijfsresultaat valt naar verwachting 75 miljoen tot 100 miljoen euro lager uit. Na het incident haalde het bedrijf een deel van zijn systemen offline, wat vooral de onlinediensten in de Benelux en de Verenigde Staten raakte."
+  },
+  {
+    "q": "Volgens de Amerikaanse cyberdienst CISA wordt een lek in WordPress Core actief misbruikt. In welk onderdeel zit die fout?",
+    "options": [
+      "De inlogpagina",
+      "De mediabibliotheek",
+      "Het commentaarsysteem",
+      "Het updateproces"
+    ],
+    "correct": 3,
+    "explanation": "Het gaat om CVE-2026-119977, een raceconditie waardoor een aanvaller zonder account tijdens het updatevenster code op de server kan uitvoeren. Volledige updates gebruiken voorspelbare tijdelijke mappen die via het web bereikbaar zijn. WordPress dichtte het lek op 28 oktober met versie 7.1.4, sites met automatische updates op de achtergrond krijgen die vanzelf."
+  },
+  {
+    "q": "Bij aanvallen op koelsystemen van supermarkten begin november werden in Zweden koelkasten en vriezers op een andere temperatuur gezet. Welke temperatuur werd gemeld?",
+    "options": [
+      "Min 50 graden Celsius",
+      "0 graden Celsius",
+      "50 graden Celsius",
+      "100 graden Celsius"
+    ],
+    "correct": 2,
+    "explanation": "Volgens Euronews ging het om winkels van ICA en Coop. Danfoss, de fabrikant van de software van de getroffen koelsystemen, zegt dat de kwetsbaarheid vooral in verouderde software zit en had klanten al opgeroepen de nieuwe software te gaan gebruiken."
+  },
+  {
+    "q": "Een rechtbank in Finland veroordeelde de Russische kapitein van het vrachtschip Fitburg tot 3,5 jaar cel. Waarvoor?",
+    "options": [
+      "Zware sabotage van onderzeese kabels",
+      "Smokkel van drones",
+      "Spionage in een marinehaven",
+      "Het lozen van olie in zee"
+    ],
+    "correct": 0,
+    "explanation": "Op 31 december 2025 sleepte het schip zijn anker urenlang over ongeveer 130 kilometer zeebodem in de Finse Golf. Daarbij raakten twee onderzeese telecomkabels beschadigd. Volgens de rechtbank werkte het vergrendelingsmechanisme van het anker normaal. De uitspraak is nog niet definitief, de kapitein wil in beroep gaan."
+  },
+  {
+    "q": "Pluxee waarschuwde houders van zijn kaart in België voor een mogelijk datalek. Waarvan is Pluxee vooral bekend?",
+    "options": [
+      "Elektrische deelsteps",
+      "Een app om te parkeren",
+      "Online cursussen voor ondernemers",
+      "Digitale maaltijdcheques"
+    ],
+    "correct": 3,
+    "explanation": "Op maandag 2 november werd schadelijke activiteit vastgesteld op een van de servers van Pluxee. Aanvallers kregen mogelijk toegang tot namen, mailadressen en telefoonnummers van gebruikers. Volgens Pluxee zijn de betaalsystemen niet geraakt, en volgens het bedrijf vraagt Pluxee niet om een pincode of wachtwoord."
+  },
+  {
+    "q": "Een lek in OpenSSH laat een aanvaller op bepaalde Linuxsystemen zonder wachtwoord inloggen. Van welke distributie werd de standaardinstallatie als voorbeeld genoemd?",
+    "options": [
+      "Ubuntu",
+      "Alpine Linux",
+      "Fedora",
+      "Linux Mint"
+    ],
+    "correct": 1,
+    "explanation": "Getroffen zijn systemen met de bibliotheek musl libc waarop sshd zonder PAM draait. Onder bepaalde voorwaarden laat een zeer lang wachtwoord de login op een account zonder wachtwoord slagen. OpenSSH bracht op 5 november versie 10.6p2 uit en Alpine bracht herstelde pakketten uit. Na het bijwerken moet sshd opnieuw worden gestart."
+  },
+  {
+    "q": "Via het startprogramma van een populaire game werd bij spelers een programma geïnstalleerd waarmee aanvallers hun computer op afstand konden overnemen. Om welke game ging het?",
+    "options": [
+      "Genshin Impact",
+      "Minecraft",
+      "Goddess of Victory: NIKKE",
+      "League of Legends"
+    ],
+    "correct": 2,
+    "explanation": "Volgens de onderzoeker bevatten vanaf 27 september vier officiële JavaScriptbestanden op de servers van uitgever Level Infinite code van een aanvaller. Het programma was gericht op wachtwoorden, cookies, toegangssleutels en cryptowallets. De onderzoeker raadt aan wachtwoorden te wijzigen vanaf een ander, schoon apparaat als je het startprogramma sinds 23 oktober hebt gebruikt."
+  },
+  {
+    "q": "Welke twee prorussische hackersgroepen claimen volgens gespecialiseerde media de aanvallen op koelinstallaties van supermarkten?",
+    "options": [
+      "Killnet en Anonymous Sudan",
+      "Sandworm en APT28",
+      "Lazarus en Kimsuky",
+      "NoName057(16) en Z-Pentest"
+    ],
+    "correct": 3,
+    "explanation": "Die claims zijn niet onafhankelijk bevestigd. Kremlinwoordvoerder Dmitri Peskov noemt het volstrekt absurd om Rusland van de aanvallen te beschuldigen. Bij de aanvallen werden de instellingen van koelkasten en diepvriezers gewijzigd, waardoor de temperatuur opliep."
+  },
+  {
+    "q": "Na een telefoontje van een zogenaamde bankmedewerker haalde een man in Gouderak de kluis van een 81-jarige vrouw leeg. Wat was de totale waarde van de buit aan geld en sieraden?",
+    "options": [
+      "150.000 euro",
+      "1.500 euro",
+      "15.000 euro",
+      "Ruim een miljoen euro"
+    ],
+    "correct": 0,
+    "explanation": "De vrouw werd gebeld door iemand die zich voordeed als medewerker van de bank en haar aanraadde haar waardevolle spullen tijdelijk veilig te stellen. Daarna kwam een man langs die een code noemde die zij ook aan de telefoon had gehoord. De zaak was te zien in het opsporingsprogramma Team West van Omroep West."
+  },
+  {
+    "q": "Wat blokkeert GitHub vanaf 2 december 2026 standaard in alle publieke repositories?",
+    "options": [
+      "Workflows in GitHub Actions die starten op een vast tijdstip",
+      "Commits in de hoofdtak zonder digitale handtekening",
+      "Workflows in GitHub Actions die starten op pull_request_target",
+      "Pushes van accounts zonder tweestapsverificatie"
+    ],
+    "correct": 2,
+    "explanation": "Volgens GitHub is het risico dat zo'n workflow code uit een fork van buiten uitvoert, die de pijplijn kan overnemen of geheimen kan stelen. Alleen een passend beleid kan zulke workflows dan nog uitdrukkelijk toestaan. Private en interne repositories vallen niet onder de maatregel."
+  },
+  {
+    "q": "Na de cyberaanval bij de Belgische FOD Financiën kunnen startende ondernemers volgens VRT NWS iets nog steeds niet via de gewone online kanalen aanvragen. Wat?",
+    "options": [
+      "Een domeinnaam op .be",
+      "Een btw-nummer",
+      "Een aansluiting bij een sociaal verzekeringsfonds",
+      "Een zakelijke bankrekening"
+    ],
+    "correct": 1,
+    "explanation": "Uit voorzorg werden diverse toepassingen van Financiën tijdelijk afgesloten, waaronder MyMinfin. Medewerkers verwerken de aanvragen nu met de hand, waardoor een achterstand van circa 5.500 dossiers is ontstaan. Volgens de berichtgeving zijn bij de aanval geen gegevens gestolen."
+  },
+  {
+    "q": "Door het lek GhostMap kan een app zonder machtigingen een Androidtoestel in een eindeloze reeks crashes brengen. Vanaf welke versie van Android zijn toestellen volgens ontdekker Bitdefender getroffen?",
+    "options": [
+      "Android 14",
+      "Android 16",
+      "Android 17",
+      "Android 10"
+    ],
+    "correct": 3,
+    "explanation": "Installeren van zo'n app is genoeg, hij hoeft niet geopend te worden. Herstel kan met een fabrieksreset, die alle lokale gegevens wist. Bitdefender meldde het probleem in augustus aan Google, dat het rapport sloot omdat het volgens Google niet te reproduceren was."
+  },
+  {
+    "q": "Microsoft volgt phishingmails die zich voordoen als bekende zakelijke diensten. Welke dienst werd in september het vaakst nagebootst?",
+    "options": [
+      "Dropbox",
+      "DocuSign",
+      "Zoom",
+      "Salesforce"
+    ],
+    "correct": 1,
+    "explanation": "Bij de berichten die een zakelijke dienst nabootsten, stond DocuSign in september bovenaan. Ook Adobe, SurveyMonkey en Barracuda werden aan het eind van het kwartaal vaker misbruikt. Diefstal van inloggegevens bleef het belangrijkste doel van de phishing."
+  },
+  {
+    "q": "Een Russische Shahed drone op weg naar Kyiv werd neergehaald. Wat zat er volgens de Oekraïense Unmanned Systems Forces in?",
+    "options": [
+      "USB-sticks met malware",
+      "Een simkaart met spionagesoftware",
+      "Propagandafolders met kwaadaardige QR-codes",
+      "Een mobiele router voor afluisteren"
+    ],
+    "correct": 2,
+    "explanation": "De QR-codes waren volgens de verklaring bedoeld om de locatie en persoonsgegevens van de vinder door te geven aan Russische inlichtingendiensten. De links in de folders leiden naar sites die met die diensten verbonden zijn en mogen niet worden geopend. Oekraïense troepen meldden zulke QR-codes via drones voor het eerst begin 2025."
+  },
+  {
+    "q": "De rechtbank in Assen veroordeelde een 30-jarige Hoogevener tot 35 maanden cel. Voor welke fraude?",
+    "options": [
+      "Refundfraude bij Amazon",
+      "Phishing met valse bankmails",
+      "Fraude met nepwebwinkels",
+      "Oplichting via WhatsApp"
+    ],
+    "correct": 0,
+    "explanation": "Hij en twee andere mannen bestelden dure elektronica en stuurden de dozen retour met waardeloos materiaal van hetzelfde gewicht in plaats van de spullen. Amazon nam de pakketjes retour en keerde het aankoopbedrag uit. Zijn 32-jarige plaatsgenoot kreeg 20 maanden cel."
+  },
+  {
+    "q": "Volgens leverancier Danfoss is begin november ook in Nederland ingebroken in koelsystemen en vriessystemen van bedrijven. Bij hoeveel bedrijven ten minste?",
+    "options": [
+      "Drie",
+      "Honderdvijftig",
+      "Zeventien",
+      "Meer dan duizend"
+    ],
+    "correct": 2,
+    "explanation": "Het ging onder meer om slagerijen en kleine buurtwinkels, grote supermarktketens in Nederland waren voor zover bekend niet getroffen. Volgens Danfoss stonden de aangevallen systemen niet op een beveiligd netwerk en hadden ze een standaardwachtwoord. Danfoss adviseerde Nederlandse klanten op 13 oktober al om de systemen van het internet los te koppelen."
+  },
+  {
+    "q": "SonicWall brengt geen updates uit voor twee lekken in Global Management System (GMS). Waarom niet?",
+    "options": [
+      "De lekken worden niet misbruikt",
+      "De lekken zijn al met een eerdere update gedicht",
+      "De lekken zitten alleen in testversies",
+      "De ondersteuning voor GMS is gestopt"
+    ],
+    "correct": 3,
+    "explanation": "GMS heeft het einde van zijn levensduur bereikt, de ondersteuning stopte op 30 september 2026. Het ernstigste lek, CVE-2026-109593 met een CVSS-score van 9.1, laat een aanvaller met netwerktoegang zonder inloggen interne bestanden lezen."
+  },
+  {
+    "q": "Valse downloadpagina's van welk programma verspreidden echte, digitaal ondertekende installers van ScreenConnect die verbinding maken met een omgeving van een aanvaller?",
+    "options": [
+      "Adobe Acrobat",
+      "Zoom",
+      "WinRAR",
+      "Google Chrome"
+    ],
+    "correct": 0,
+    "explanation": "Onderzoekers van CloudSEK beschreven de nagemaakte pagina's, die valse verzoeken tonen om een document te bekijken of te ondertekenen. Een buitenstaander kan zo toegang op afstand krijgen tot de computer. Een geldige handtekening van de leverancier maakt zo'n programma volgens CloudSEK dus niet veilig."
+  },
+  {
+    "q": "ENISA en Europese partners wezen na de aanvallen op koelsystemen op de Cyber Resilience Act. Vanaf wanneer gelden de belangrijkste beveiligingseisen van die wet?",
+    "options": [
+      "11 september 2026",
+      "11 december 2027",
+      "1 januari 2026",
+      "17 oktober 2024"
+    ],
+    "correct": 1,
+    "explanation": "Sinds 11 september 2026 moeten fabrikanten van hardware en software wel al ernstige incidenten en actief misbruikte kwetsbaarheden melden. De beveiligingseisen zelf gelden pas vanaf 11 december 2027. Organisaties die onder NIS2 vallen, moeten nu al hun cyberrisico's beheren en significante incidenten melden."
+  }
+];questions.forEach(question=>{Object.freeze(question.options);Object.freeze(question)});Object.freeze(questions);
+let score=0,answered=0;const letters=['A','B','C','D'];
+function render(){const root=document.getElementById('quiz');root.innerHTML='';score=0;answered=0;update();questions.forEach((q,i)=>{const card=document.createElement('article');card.className='card';card.id='q'+i;card.innerHTML='<div class="number">Vraag '+(i+1)+' van '+questions.length+'</div><div class="question">'+q.q+'</div><div class="options">'+q.options.map((o,j)=>'<button class="option" id="q'+i+'o'+j+'" onclick="answer('+i+','+j+')"><span class="letter">'+letters[j]+'</span><span>'+o+'</span></button>').join('')+'</div><div class="feedback" aria-live="polite" id="fb'+i+'"></div>';root.appendChild(card)})}
+function answer(i,j){const q=questions[i],card=document.getElementById('q'+i);if(card.dataset.done)return;card.dataset.done='1';answered++;const ok=j===q.correct;if(ok)score++;q.options.forEach((_,k)=>{const el=document.getElementById('q'+i+'o'+k);el.classList.add('disabled');el.disabled=true;if(k===q.correct)el.classList.add('correct');if(k===j&&!ok)el.classList.add('wrong')});card.classList.add(ok?'good':'bad');const fb=document.getElementById('fb'+i);fb.className='feedback show '+(ok?'good':'bad');fb.textContent=(ok?'✓ Goed! ':'✗ Fout. ')+q.explanation;update();if(answered===questions.length)setTimeout(showResults,500)}
+function update(){document.getElementById('score').textContent=score;document.getElementById('answered').textContent=answered;document.querySelector('[role=progressbar]').setAttribute('aria-valuenow',answered);document.getElementById('progress').style.width=(answered/questions.length*100)+'%'}
+function showResults(){const r=document.getElementById('results');r.classList.add('show');document.getElementById('final').textContent=score+' / '+questions.length;document.getElementById('message').textContent=score===20?'Perfect, alle vragen goed!':score>=16?'Uitstekend, je bent goed op de hoogte.':score>=12?'Goed gedaan, veel onderwerpen zijn bekend.':'Lees de weekoverzichten nog eens terug en probeer opnieuw.';r.scrollIntoView({behavior:'smooth'})}
+function restartQuiz(){document.getElementById('results').classList.remove('show');render();scrollTo({top:0,behavior:'smooth'})}render();
+</script></body></html>
